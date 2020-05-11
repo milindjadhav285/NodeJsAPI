@@ -23,5 +23,6 @@ app.listen(port, () => {
 		process.env.DB_Connection,{
 			useNewUrlParser: true,
 			useUnifiedTopology: true
-		}).then(() => console.log('connected to DB'))
+		},
+		() => console.log('connected to DB'))
 });
