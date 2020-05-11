@@ -1,10 +1,12 @@
 const express = require('express');
 const app = express();
+const port = 3000;
+//const client = express().listen(port, ()=>console.log('connected to server:'+port));
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 require('dotenv/config');
-const port = 3000;
+
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -26,6 +28,16 @@ app.listen(port, () => {
 		},
 		() => console.log('connected to DB'))
 });
+
+/*
+
+mongoose.connect(
+	process.env.DB_Connection,{
+		useNewUrlParser: true,
+		useUnifiedTopology: true
+	},
+	() => console.log('connected to DB'))
+*/
 
 /*
 app.listen(port, () => {
