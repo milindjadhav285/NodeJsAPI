@@ -26,3 +26,18 @@ app.listen(port, () => {
 		},
 		() => console.log('connected to DB'))
 });
+
+/*
+app.listen(port, () => {
+	console.log('connected to server: '+port);
+	mongoose.connect(process.env.DB_Connection,
+		{useNewUrlParser: true, useUnifiedTopology: true},
+		(err) => {
+			if (err) {
+				throw err;
+			}
+			console.log('connected to DB');
+		});
+    
+});
+*/
