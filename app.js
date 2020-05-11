@@ -20,5 +20,8 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
 	console.log('connected to server: '+port)
 	mongoose.connect(
-    process.env.DB_Connection,() => console.log('connected to DB'))
+		process.env.DB_Connection,{
+			useNewUrlParser: true,
+			useUnifiedTopology: true
+		}).then(() => console.log('connected to DB'))
 });
