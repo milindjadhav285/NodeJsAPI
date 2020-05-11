@@ -20,12 +20,11 @@ app.get('/', (req, res) => {
 });
 
 
-//app.listen(port, () => {
-	//console.log('connected to server: '+port);
-	mongoose.connect(
-		process.env.DB_Connection,{
-    	useNewUrlParser: true,
-    	useUnifiedTopology: true
-    },
-    () => console.log('connected to DB'));
-//});
+
+mongoose.connect(
+	process.env.DB_Connection,{
+useNewUrlParser: true,
+useUnifiedTopology: true
+},
+() => console.log('connected to DB'));
+
